@@ -9,9 +9,15 @@ export default {
 </script>
 
 <template>
-    <CardsContainer/>
+    <main>
+        <CardsContainer/>
+    </main>
 </template>
 
-<style>
-
+<style lang="scss">
+@use '../scss/partials/var' as *;
+main{
+    background-color: $orange;
+    padding: 50px;
+}
 </style>
