@@ -16,7 +16,7 @@ export default {
 
 <template>
 
-<div class="container">
+<div class="container bg-light pt-5 px-4 rounded-2 ">
     <div class="row">
         <cards
         v-for="card in store.characterList"
