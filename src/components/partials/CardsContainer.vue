@@ -16,13 +16,17 @@ export default {
 
 <template>
 
-    <cards
-    v-for="card in store.characterList"
-    :key="card.id"
-    :name="card.name"
-    :archetype="card.archetype"
-    :cardImg="card.card_images"
-    />
+<div class="container">
+    <div class="row">
+        <cards
+        v-for="card in store.characterList"
+        :key="card.id"
+        :name="card.name"
+        :archetype="card.archetype"
+        :cardImg="card.card_images"
+        />
+    </div>
+</div>
   
 </template>
 
