@@ -11,18 +11,40 @@ export default {
 
 <template>
 
-    <img
-    v-for="img in cardImg"
-    :key="img.id"
-    :src="img.image_url" 
-    alt="">
+<div class="col mb-5">
 
-    <h1>{{ name }}</h1>
+    <div class="card text-center border-0 ">
+        <div class="image">
+        <img
+        v-for="img in cardImg"
+        :key="img.id"
+        :src="img.image_url" 
+        alt="">
+    </div>
+    <div class="text">
+        <h3>{{ name }}</h3>
+        <p>{{ archetype }}</p>        
+    </div>
+    </div>
 
-    <p>{{ archetype }}</p>
+
+</div>
   
 </template>
 
-<style>
+<style lang="scss" scoped>
+
+@use '../../scss/partials/var' as *;
+
+.card{
+    width: 230px;
+    height: 500px;
+    background-color: $orange;
+    img{
+    width: 100%;
+    height: 100%;
+    }
+}
+
 
 </style>
