@@ -3,12 +3,14 @@ import axios from 'axios';
 import Header from './components/Header.vue';
 import { store } from './data/store';
 import Main from './components/Main.vue';
+import Select from './components/Select.vue';
 
 export default {
   name: 'App',
   components: {
     Header,
-    Main
+    Main,
+    Select
   },
   data() {
     return {
@@ -33,6 +35,7 @@ export default {
 <template>
 
   <Header/>
+  <Select/>
   <Main/>
 
 </template>
