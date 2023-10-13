@@ -15,9 +15,7 @@ export default {
 </template>
 
 <style lang="scss">
-@use '../scss/partials/var' as *;
 main{
-    background-color: $orange;
     padding: 50px;
 }
 </style>
