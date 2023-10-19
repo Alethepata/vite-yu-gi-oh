@@ -19,9 +19,22 @@ export default {
   },
   methods: {
     getApi() {
-      axios.get(store.apiUrl)
+      axios.get(store.apiUrl, {
+        params: {
+          archetype:store.selectArchetype
+        }
+      })
         .then(res => {
           store.characterList = res.data.data
+
+          store.characterList.forEach((character) => {
+            if(character.archetype.includes(character.archetype)){
+              if (!store.archetypeList.includes(character.archetype)) {
+              store.archetypeList.push(character.archetype)
+            }
+          }
+          })
+
       })
     }
   },
@@ -35,7 +48,7 @@ export default {
 <template>
 
   <Header/>
-  <Select/>
+  <Select @selected="getApi()"/>
   <Main/>
 
 </template>
