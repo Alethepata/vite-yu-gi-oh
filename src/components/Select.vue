@@ -1,16 +1,27 @@
 <script>
+import { store } from '../data/store'
 export default {
-    name:'Select'
+    name: 'Select',
+    data() {
+        return {
+            store
+        }
+    }
 }
 </script>
 
 <template>
+
     <div class="container">
-        <select class="form-select" aria-label="Default select example">
-           <option selected>Open this select menu</option>
-           <option value="1">One</option>
-           <option value="2">Two</option>
-           <option value="3">Three</option>
+        <select @click="$emit('selected')" v-model="store.selectArchetype" class="form-select" aria-label="Default select example">
+            <option value="" selected>Archetype</option>
+            <option
+           v-for="(archetype,index) in store.archetypeList"
+           :key="index" 
+           :value="archetype"
+           >
+            {{archetype}}
+           </option>
         </select>
     </div>
 </template>
